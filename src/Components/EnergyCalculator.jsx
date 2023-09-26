@@ -87,7 +87,7 @@ const EnergyCalculator = () => {
       />
     </div>
     <div className="input-group">
-      <label htmlFor={`costOfDevice${index}`}>Cost of the device ($):</label>
+      <label htmlFor={`costOfDevice${index}`}>Cost of the device (GEL):</label>
       <input
         type="number"
         id={`costOfDevice${index}`}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import EnergyCalculator from './Components/EnergyCalculator';
 import FertilizerCalculator from './Components/FertilizerCalculator';
+import InfoBlock from './Components/InfoBlock';
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className='App'>
     <FertilizerCalculator />
     <EnergyCalculator />
+    <InfoBlock />
     </div>
   );
 };

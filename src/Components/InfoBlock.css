@@ -1,0 +1,23 @@
+.info-block {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: small;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .info-block h4 {
+    margin-bottom: 10px;
+  }
+  
+  .info-block ul {
+    padding-left: 20px;
+  }
+  
+  .info-block li {
+    margin-bottom: 5px;
+  }
+  

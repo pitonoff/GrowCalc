@@ -26,7 +26,7 @@ const FertilizerCalculator = () => {
     let totalCost = 0;
 
     fertilizers.forEach((fertilizer) => {
-      const totalAmount = (fertilizer.amountPerWatering * fertilizer.weeksOfUse) / fertilizer.wateringInterval;
+      const totalAmount = (fertilizer.amountPerWatering * (fertilizer.weeksOfUse * 7)) / fertilizer.wateringInterval;
       const fertilizerCost = (fertilizer.price * totalAmount) / fertilizer.volume;
       totalCost += fertilizerCost;
     });
