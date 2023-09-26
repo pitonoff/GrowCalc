@@ -2,7 +2,9 @@ body {
     margin: 0px;
 }
 .App {
+    width: 60%;
     display: flex;
     margin: 0;
-    justify-content: space-between;
+    justify-self: center;
+    align-self: center;
 }
