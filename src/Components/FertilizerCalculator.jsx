@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import './FertilizerCalculator.css';
+import { useDispatch } from 'react-redux';
+import { updateFertilizerCost } from './actions'; // Import the action creator
 
 const FertilizerCalculator = () => {
   const [fertilizers, setFertilizers] = useState([
-    { price: 0, volume: 0, amountPerWatering: 0, weeksOfUse: 0, wateringInterval: 0 }
+    { name: '', price: 0, volume: 0, amountPerWatering: 0, weeksOfUse: 0, wateringInterval: 0 }
   ]);
   const [totalCost, setTotalCost] = useState(0);
 
   const addFertilizer = () => {
-    setFertilizers([...fertilizers, { price: 0, volume: 0, amountPerWatering: 0, weeksOfUse: 0, wateringInterval: 0 }]);
+    setFertilizers([...fertilizers, { name: '', price: 0, volume: 0, amountPerWatering: 0, weeksOfUse: 0, wateringInterval: 0 }]);
   };
 
   const removeFertilizer = (index) => {
@@ -22,6 +24,8 @@ const FertilizerCalculator = () => {
     setFertilizers(updatedFertilizers);
   };
 
+  const dispatch = useDispatch();
+
   const calculateTotalCost = () => {
     let totalCost = 0;
 
@@ -32,6 +36,11 @@ const FertilizerCalculator = () => {
     });
 
     setTotalCost(totalCost);
+    dispatch(updateFertilizerCost(totalCost));
+  };
+
+  const getTotalCost = () => {
+    return totalCost; // Вернуть общий расход
   };
 
   return (
@@ -41,6 +50,15 @@ const FertilizerCalculator = () => {
       {fertilizers.map((fertilizer, index) => (
         <div key={index} className="fertilizer-container">
           <h3>Fertilizer {index + 1}</h3>
+          <div className="input-group">
+            <label htmlFor={`name${index}`}>Fertilizer Name:</label>
+            <input
+              type="text"
+              id={`name${index}`}
+              value={fertilizer.name}
+              onChange={(e) => handleFertilizerChange(index, 'name', e.target.value)}
+            />
+          </div>
           <div className="input-group">
             <label htmlFor={`price${index}`}>Price per unit (GEL):</label>
             <input
@@ -101,5 +119,7 @@ const FertilizerCalculator = () => {
     </div>
   );
 };
+
+
 
 export default FertilizerCalculator;

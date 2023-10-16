@@ -7,3 +7,10 @@ body {
     justify-content: space-around;
     margin: 10px;
 }
+
+@media (max-width: 768px) {
+    .App {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}

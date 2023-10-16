@@ -1,5 +1,6 @@
 import React from 'react';
 import './InfoBlock.css';
+import TotalCostDisplay from './TotalCostDisplay';
 
 const InfoBlock = () => {
   return (
@@ -36,6 +37,7 @@ const InfoBlock = () => {
       <ul>
         <li>The calculated daily energy consumption for each appliance and the total daily energy consumption will be displayed.</li>
       </ul>
+      <TotalCostDisplay />
     </div>
   )
 }

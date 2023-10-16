@@ -16,9 +16,15 @@
     display: block;
     margin-bottom: 5px;
   }
-  
+  .device-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    padding-top: 0;
+  }
   input {
-    width: calc(100% - 22px);
+    width: calc(100% - 30px);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -28,7 +34,7 @@
   
   button {
     display: block;
-    width: 100%;
+    width: 85%;
     padding: 10px;
     background-color: #3498db;
     color: #fff;
